@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import StudentForm from './components/StudentForm'
 import RecordsTable from './components/RecordsTable'
+import GoogleConnect from './components/GoogleConnect'
 
 function App() {
   const [refresh, setRefresh] = useState(0)
@@ -15,6 +16,8 @@ function App() {
           <h1 className="text-4xl font-bold text-white tracking-tight mb-2">Student Records</h1>
           <p className="text-blue-200">Add entries and save them to a Google Sheet inside your Drive folder named "Don't_Delete_This".</p>
         </div>
+
+        <div className="mb-6"><GoogleConnect /></div>
 
         <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-6 shadow-xl mb-8">
           <StudentForm onSaved={triggerRefresh} />
